@@ -5,53 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meme Generator</title>
-    <style>
-        canvas{
-            box-shadow: 0 0 0 4px rgba(10, 0, 200, .4),
-            0 0 0 8px rgba(200, 0, 200, .4);
-            margin: 20px 0;
-            float: left;
-            margin-right: 40px;
-        }
-        .upload-img{
-            display: inline-block;
-            clear: both;
-            margin-top: 30px;
-        }
-        .img-handler{
-            display: none;
-        }
-
-    </style>
+    <link rel="stylesheet" href="bower_components\skeleton\css\normalize.css">    
+    <link rel="stylesheet" href="bower_components\skeleton\css\skeleton.css">
+    <link rel="stylesheet" href="bower_components\font-awesome\css\font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <canvas id="mainCanvas" width="520" height="340">
-        your browser does not support HTML5 canvas
-    </canvas>
+    <div class="container">
+        <div class="main_canvas u-pull-left">
+            <canvas id="mainCanvas" width="420" height="340">
+                your browser does not support HTML5 canvas
+            </canvas>
+            <!-- end canvas -->
 
-    <div class="upload-img">
-        <!--<input type="file" accept="image/*" placeholder="please upload an image">-->
-        <input id="img-url" type="text" placeholder="enter an image URL">
-        <br>
-        <hr>
-        <label for="top-text">top sentence</label>
-        <input class="added-text" type="text" id="top-text">
+            <div class="canvas_placeholder">
+                <span id="top_sen_hold"></span>
+                <span id="bottom_sen_hold"></span>
+                <div class="positions">
+                    <p>position the image</p>
+                    <button id="arr_up"><i class="fa fa-arrow-up"></i></button>
+                    <button id="arr_down"><i class="fa fa-arrow-down"></i></button>
+                    <button id="arr_left"><i class="fa fa-arrow-left"></i></button>
+                    <button id="arr_right"><i class="fa fa-arrow-right"></i></button>
+                </div>
+            </div>  
 
-        <button id="click">set text</button>
-
-        <br><br>
+        </div>
         
-        <!--<label for="bottom-text">bottom sentence</label>        
-        <input class="added-text" type="text" id="bottom-text">-->
+        <div class="actions">
+            <div class="image_link">
+                <label for="img_URL">enter a image URL</label>
+                <input type="text" id="img_URL" autofocus placeholder="https://ex.com/imgs/you.png">
+                <button id="btn_imgURL">Insert image</button>
+            </div>
+            <div class="sentences">
+                <label for="top_sen">Top Sentence</label>
+                <input type="text" id="top_sen" placeholder="top sentence goes here">
+                <br>
+                <label for="bottom_sen">Bottom Sentence</label>                
+                <input type="text" id="bottom_sen" placeholder="bottom sentence goes here">
+            </div>
+            <div class="preview_ac">
+                <button id="preview_as_img">Preview &amp; Download</button>
+            </div>
+        </div>
+        <div class="u-cf"></div>
+        <!-- end actions -->
+
+        <!-- 
+            for testing only
+            it will be removed later
+        -->
+        <img id="default_img" style="display:none" src="https://thumb1.shutterstock.com/display_pic_with_logo/491584/100601029/stock-photo-designed-grunge-paper-texture-background-100601029.jpg" alt="">
+
     </div>
 
-    <!-- 
-        for testing only
-        it will be removed later
-     -->
-    <img id="test" style="display:none" src="https://thumb1.shutterstock.com/display_pic_with_logo/491584/100601029/stock-photo-designed-grunge-paper-texture-background-100601029.jpg" alt="">
 
-    <script src="main.js"></script>
+    <!--<script src="main.js"></script>-->
+    <script src="script.js"></script>
+    
 </body>
 </html>

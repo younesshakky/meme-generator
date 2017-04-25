@@ -1,0 +1,24 @@
+{
+  "name": "memeGener",
+  "homepage": "https://github.com/younesshakky/meme-generator",
+  "authors": [
+    "younesshakky <youness.hakky@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "skeleton": "^2.0.4"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}
