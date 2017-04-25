@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meme Generator</title>
+    <style>
+        canvas{
+            box-shadow: 0 0 0 4px rgba(10, 0, 200, .4),
+            0 0 0 8px rgba(200, 0, 200, .4);
+            margin: 20px 0;
+            float: left;
+            margin-right: 40px;
+        }
+        .upload-img{
+            display: inline-block;
+            clear: both;
+            margin-top: 30px;
+        }
+        .img-handler{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <canvas id="mainCanvas" width="520" height="340">
+        your browser does not support HTML5 canvas
+    </canvas>
+
+    <div class="upload-img">
+        <!--<input type="file" accept="image/*" placeholder="please upload an image">-->
+        <input id="img-url" type="text" placeholder="enter an image URL">
+        <br>
+        <hr>
+        <label for="top-text">top sentence</label>
+        <input class="added-text" type="text" id="top-text">
+
+        <button id="click">set text</button>
+
+        <br><br>
+        
+        <!--<label for="bottom-text">bottom sentence</label>        
+        <input class="added-text" type="text" id="bottom-text">-->
+    </div>
+
+    <!-- 
+        for testing only
+        it will be removed later
+     -->
+    <img id="test" style="display:none" src="https://thumb1.shutterstock.com/display_pic_with_logo/491584/100601029/stock-photo-designed-grunge-paper-texture-background-100601029.jpg" alt="">
+
+    <script src="main.js"></script>
+</body>
+</html>
