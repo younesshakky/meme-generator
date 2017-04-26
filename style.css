@@ -1,3 +1,7 @@
+body{
+    position: relative;
+}
+
 .main_canvas{
     /*border: 2px dashed red;*/
     margin-top: 20px;
@@ -38,7 +42,7 @@ container{overflow: hidden}
     margin-bottom: 1em;
 }
 
-button:active{
+button:active, .button:active{
     box-shadow: inset 0 5px 10px rgba(9,9,9, .2)
 }
 
@@ -56,6 +60,61 @@ label{
     width: 290px;
 }
 
-.img-handler{
-    display: none;
+.img_size{
+    width: 100px;
+}
+
+.sizing  span{
+    color: #999;
+}
+
+.preview_wrapper{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left:0;
+    top:0;
+    transition: all .4s cubic-bezier(0.65, 0.1, 0.25, 0.97);
+    
+}
+
+.preview_wrapper.is_hidden{
+    opacity:0;
+    transform: scale(1.1);
+    visibility: hidden;
+}
+
+.preview_wrapper .overlay{
+    background: rgba(9,9,9, .8);
+    /*position: absolute;*/
+    height: 100%;
+    z-index: 2;
+    left: 0;
+    top:0;
+    cursor: zoom-out;
+}
+
+.preview_wrapper .preview_content{
+    background: white;
+    height: 550px;
+    width: 80%;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+}
+
+.preview_wrapper .preview_content #cancel{
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+    text-decoration: none;
+    color: #6E7783;
+}
+
+#download_btn{
+    position: absolute;
+    right: 100px;
+    bottom: 2px;
 }

@@ -26,10 +26,22 @@
                 <span id="bottom_sen_hold"></span>
                 <div class="positions">
                     <p>position the image</p>
-                    <button onclick="moveUp()" id="arr_up" title="move up"><i class="fa fa-arrow-up"></i></button>
-                    <button onclick="moveDown()" id="arr_down" title="move down"><i class="fa fa-arrow-down"></i></button>
-                    <button onclick="moveLeft()" id="arr_left" title="move left"><i class="fa fa-arrow-left"></i></button>
-                    <button onclick="moveRight()" id="arr_right" title="move right"><i class="fa fa-arrow-right"></i></button>
+                    <!-- move up -->
+                    <button onclick="moveUp()" id="arr_up" title="move up">
+                        <i class="fa fa-arrow-up"></i>
+                    </button>
+                    <!-- move down -->                    
+                    <button onclick="moveDown()" id="arr_down" title="move down">
+                        <i class="fa fa-arrow-down"></i>
+                    </button>
+                    <!-- move left -->                    
+                    <button onclick="moveLeft()" id="arr_left" title="move left">
+                        <i class="fa fa-arrow-left"></i>
+                    </button>
+                    <!-- move right -->
+                    <button onclick="moveRight()" id="arr_right" title="move right">
+                        <i class="fa fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>  
 
@@ -42,8 +54,11 @@
                 <button id="btn_imgURL">Insert image</button>
             </div>
             <div class="sizing">
-                <label for="img_size">Resize image</label>                
-                <input id="img_size" type="number" min="0" placeholder="default: original size">
+                <label for="img_size">Resize image</label>
+                <span>Width</span>
+                <input class="img_size" id="img_size-width" value="450" type="number" min="0" placeholder="Width">
+                <span>Height</span>                
+                <input class="img_size" id="img_size-height" value="450" type="number" min="0" placeholder="Height">
             </div>
             <div class="sentences">
                 <label for="top_sen">Top Sentence</label>
@@ -53,23 +68,24 @@
                 <input type="text" id="bottom_sen" placeholder="bottom sentence goes here">
             </div>
             <div class="preview_ac">
-                <button id="preview_as_img">Preview &amp; Download</button>
+                <button onclick="togglePreview()" id="preview_as_img">Preview &amp; Download</button>
             </div>
         </div>
         <div class="u-cf"></div>
         <!-- end actions -->
 
-        <!-- 
-            for testing only
-            it will be removed later
-        -->
-        <img id="default_img" width="100" style="display:none" src="https://thumb1.shutterstock.com/display_pic_with_logo/491584/100601029/stock-photo-designed-grunge-paper-texture-background-100601029.jpg" alt="">
-
     </div>
 
+    <!-- end container -->
+    <div class="preview_wrapper is_hidden">
+        <div onclick="togglePreview()" class="overlay"></div>
+        <div class="preview_content">
+            <a onclick="downloadImg()" id="download_btn" class="button" href="#">download image</a>
+            <a href="#" onclick="togglePreview()" id="cancel">Cancel</a>
+        </div>
+    </div>
+    <!-- end wrapper -->
 
-    <!--<script src="main.js"></script>-->
     <script src="script.js"></script>
-    
 </body>
 </html>
