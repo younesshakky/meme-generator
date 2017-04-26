@@ -15,7 +15,8 @@ var canvasImageWidth = document.getElementById('img_size-width').value,
 
 // inputs related
 var imgURLField = document.getElementById('img_URL'),
-    pushImg = document.getElementById('btn_imgURL');
+    pushImg = document.getElementById('btn_imgURL'),
+    sizeInputs = document.querySelectorAll('.img_size');
 
 // sizing the canvas wrapper
 canvasWrap.style.width = canvas.width + 'px';
@@ -25,10 +26,10 @@ canvasWrap.style.height = canvas.height + 'px';
 canvasHold.style.width = canvas.width + 'px';
 canvasHold.style.height = canvas.height + 'px';
 
-window.onload = setDefaultImg(imgDefault, x, y);
+window.onload = setImg(imgDefault, x, y);
 
 
-function setDefaultImg (img, x, y, swidth, sheight) {
+function setImg (img, x, y, swidth, sheight) {
     x = this.x
     y = this.y
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -36,6 +37,15 @@ function setDefaultImg (img, x, y, swidth, sheight) {
     console.log(canvasImageWidth, canvasImageHeight);
 
     // console.log('x axis : ' + x, 'y axis : ' + y);
+}
+
+sizeInputs.forEach(function(input){
+    input.oninput = resize(input.value);
+});
+
+function resize(width, height){
+    setImg(imgDefault, x, y, height, width);
+    console.log('main log ' + width, height);
 }
 
 // validating img
@@ -48,27 +58,27 @@ pushImg.onclick = function () {
         console.log('please insert a valid image');
     }else if (imgURLExt === 'png' || imgURLExt === 'jpg' || imgURLExt === 'jpeg'){
         imgDefault.src = imgURLField.value;
-        setDefaultImg(imgDefault, x=0, y=0);
+        setImg(imgDefault, x=0, y=0);
     }else{
-        console.log('please insert a valid image');        
+        console.log('please insert a valid image');
     }
 }
 
 // moving arround
 
 function moveUp () {
-    setDefaultImg(imgDefault, x, y-=4);
+    setImg(imgDefault, x, y-=4);
 }
 function moveDown () {
-    setDefaultImg(imgDefault, x, y+=4);
+    setImg(imgDefault, x, y+=4);
 }
 
 function moveLeft () {
-    setDefaultImg(imgDefault, x-=4, y);
+    setImg(imgDefault, x-=4, y);
 }
 
 function moveRight () {
-    setDefaultImg(imgDefault, x+=4, y);
+    setImg(imgDefault, x+=4, y);
 }
 
 function togglePreview(){
