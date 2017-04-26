@@ -56,7 +56,7 @@ var topText = document.getElementById('top-text');
 		
 // 		if(imgUrlInput.value.length < 5){
 // 				return;
-// 		}else if (imgURLExt == 'png' || imgURLExt == 'jpg' || imgURLExt == 'jpeg'){
+// 		}else if (imgURLExt === 'png' || imgURLExt === 'jpg' || imgURLExt === 'jpeg'){
 
 // 				var imgHandler = document.querySelectorAll('.img-handler');
 

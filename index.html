@@ -16,6 +16,8 @@
         <div class="main_canvas u-pull-left">
             <canvas id="mainCanvas" width="420" height="340">
                 your browser does not support HTML5 canvas
+                <br>
+                please upgrade your browser for a better experience
             </canvas>
             <!-- end canvas -->
 
@@ -24,10 +26,10 @@
                 <span id="bottom_sen_hold"></span>
                 <div class="positions">
                     <p>position the image</p>
-                    <button id="arr_up"><i class="fa fa-arrow-up"></i></button>
-                    <button id="arr_down"><i class="fa fa-arrow-down"></i></button>
-                    <button id="arr_left"><i class="fa fa-arrow-left"></i></button>
-                    <button id="arr_right"><i class="fa fa-arrow-right"></i></button>
+                    <button onclick="moveUp()" id="arr_up" title="move up"><i class="fa fa-arrow-up"></i></button>
+                    <button onclick="moveDown()" id="arr_down" title="move down"><i class="fa fa-arrow-down"></i></button>
+                    <button onclick="moveLeft()" id="arr_left" title="move left"><i class="fa fa-arrow-left"></i></button>
+                    <button onclick="moveRight()" id="arr_right" title="move right"><i class="fa fa-arrow-right"></i></button>
                 </div>
             </div>  
 
@@ -36,8 +38,12 @@
         <div class="actions">
             <div class="image_link">
                 <label for="img_URL">enter a image URL</label>
-                <input type="text" id="img_URL" autofocus placeholder="https://ex.com/imgs/you.png">
+                <input id="img_URL" type="text" autofocus placeholder="https://ex.com/imgs/you.png">
                 <button id="btn_imgURL">Insert image</button>
+            </div>
+            <div class="sizing">
+                <label for="img_size">Resize image</label>                
+                <input id="img_size" type="number" min="0" placeholder="default: original size">
             </div>
             <div class="sentences">
                 <label for="top_sen">Top Sentence</label>
@@ -57,7 +63,7 @@
             for testing only
             it will be removed later
         -->
-        <img id="default_img" style="display:none" src="https://thumb1.shutterstock.com/display_pic_with_logo/491584/100601029/stock-photo-designed-grunge-paper-texture-background-100601029.jpg" alt="">
+        <img id="default_img" width="100" style="display:none" src="https://thumb1.shutterstock.com/display_pic_with_logo/491584/100601029/stock-photo-designed-grunge-paper-texture-background-100601029.jpg" alt="">
 
     </div>
 
