@@ -26,7 +26,7 @@ window.onload = function (){
     canvasHold.style.height = canvas.height + 'px';
 
     imgDefault.setAttribute('crossOrigin', 'anonymous');
-    imgDefault.src = '//nodeframework.com/assets/img/js.png';
+    imgDefault.src = 'https://www.mememaker.net/static/images/templates/198942.jpg';
     setImg(imgDefault, x, y);
 }
 
