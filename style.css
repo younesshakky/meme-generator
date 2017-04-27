@@ -3,13 +3,10 @@ body{
 }
 
 .main_canvas{
-    /*border: 2px dashed red;*/
     margin-top: 20px;
     margin-right: 40px;
     position: relative;
     border: 2px solid #999;
-    
-        
 }
 
 container{overflow: hidden}
@@ -25,10 +22,9 @@ container{overflow: hidden}
     position: absolute;
     display: inline-block;
     bottom: -11%;
-    opacity: .4;    
+    opacity: .4;
     left: 50%;
     transform: translateX(-50%);
-    /*background: red;*/
     width: 72.2%;
     transition: all .4s ease;
 }
@@ -36,14 +32,26 @@ container{overflow: hidden}
 .canvas_placeholder:hover .positions{
     bottom: 0;
     opacity: 1;
-} 
+}
 .canvas_placeholder .positions p {
     text-align: center;
     margin-bottom: 1em;
 }
 
+button, .button{
+    background: #3F51B5;
+    color: white;
+    border-color: transparent;
+}
+
+button:hover, .button:hover,
+button:focus, .button:focus{
+    border-color: transparent;
+    color: white;
+}
+
 button:active, .button:active{
-    box-shadow: inset 0 5px 10px rgba(9,9,9, .2)
+    box-shadow: inset 0 5px 10px rgba(9,9,9, .2);
 }
 
 .actions{
@@ -52,9 +60,7 @@ button:active, .button:active{
     margin: 20px 0;
 }
 
-label{
-    color: #666;
-}
+label{color: #666;}
 
 .sentences input{
     width: 290px;
@@ -86,7 +92,6 @@ label{
 
 .preview_wrapper .overlay{
     background: rgba(9,9,9, .8);
-    /*position: absolute;*/
     height: 100%;
     z-index: 2;
     left: 0;
@@ -117,4 +122,8 @@ label{
     position: absolute;
     right: 100px;
     bottom: 2px;
+}
+
+#final_canvas{
+    border: 2px solid #444;
 }
