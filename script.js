@@ -26,7 +26,7 @@ window.onload = function (){
     canvasHold.style.height = canvas.height + 'px';
 
     imgDefault.setAttribute('crossOrigin', 'anonymous');
-    imgDefault.src = 'http://nodeframework.com/assets/img/js.png';
+    imgDefault.src = '//nodeframework.com/assets/img/js.png';
     setImg(imgDefault, x, y);
 }
 
